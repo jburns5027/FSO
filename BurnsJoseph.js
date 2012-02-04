@@ -1,4 +1,4 @@
-alert("The story Begins in the morning!!");
+/* alert("The story Begins in the morning!!");
 console.log(" First I have to decide if today is a good day to run?" +
 " Is the weather right today?");
 
@@ -56,6 +56,18 @@ console.log("It's time to start a c2,5k training log" + " Week 4, day 3 involves
  console.log("\"Jog Now.\"");  */
 
 // Below: Arrays
+
+var workOut = [ "upperbody", "lowerbody", "core", "cardio"];
+
+console.log(workOut);
+
+orkOutCount = workOut.length;
+
+/*workOutCount, lastworkOutIndex;
+
+workOutCounts = workOut.length;
+
+lastworkOutIndex = workOutCount -1; */
 
 
 
