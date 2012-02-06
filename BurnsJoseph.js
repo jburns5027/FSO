@@ -67,13 +67,16 @@ lastWorkOutIndex = workOutCount - 1;
 for (var i = 0; i < workOut.length; i++)  {
     console.log("Work Out type: " + workOut[i]);
 }
-    console.log("Monday: " + workOut[0]);
-    console.log("Tuesday: " + workOut[1]);
-    console.log("Wedensday: " + workOut[2]);
-    console.log("Thursday: " + workOut[1]);
-    console.log("Friday: " + workOut[3]);
-    console.log("Saterday: " + workOut[1]);
-    console.log("Sunday: " + workOut[4]);
+    console.log("Monday: " + workOut[0],
+               " Tuesday: " + workOut[1],
+               " Wedensday: " + workOut[2],
+               " Thursday: " + workOut[1],
+               " Friday: " + workOut[3],
+               " Saterday: " + workOut[1],
+               " Sunday: " + workOut[4]);
+workOut[3] = "RUN!!";
+console.log( workOut);
+
 
 
 
