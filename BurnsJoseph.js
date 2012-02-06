@@ -57,7 +57,12 @@ console.log("It's time to start a c2,5k training log" + " Week 4, day 3 involves
 
 // Below: Arrays
 
-var workOut = [ "upperbody", "lowerbody", "core", "cardio"];
+var workOut = [ "upperbody", "lowerbody", "core", "cardio"],
+    workOutCount, lastWorkOutIndex;
+
+workOutCount = workOut.length;
+lastWorkOutIndex = workOutCount - 1;
+
 
 for (var i = 0; i < workOut.length; i++)  {
     console.log("Work Out type:" + workOut[i]);
