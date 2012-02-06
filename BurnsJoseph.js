@@ -87,19 +87,21 @@ lastworkOutIndex = workOutCount -1; */
 var stretchNames = ["back", "hamstring", "quads", "achilles"],
     minsPerStretch = [2, 10, 5, 3];
 
-for (var stretchNumber = 0; stretchNumber < stretchNames.length; stretchNumber++ ) {
-    var stretchNames = stretchNames[stretchNumber],
-        minsPerStretch = minsPerStretch[stretchNumber];
-    console.log("Starting to stretch the " + stretchNames + " for " + minsPerStretch + " minutes");
 
-    for (var minutes = 0; minutes < minsPerStretch; minutes += 1) {
-        var minutesRemain = minsPerStretch - minutes;
-        console.log(minutes + " Done, " + minutesRemain + "to go! ");
+for (var stretchNumber = 0; stretchNumber < stretchNames.length; stretchNumber++) {
+     var stretchName = stretchNames[stretchNumber],
+        minsThisStretch = minsPerStretch[stretchNumber];
+
+    console.log("Starting to stretch the " + stretchName + " for " + minsThisStretch + " minutes");
+
+    for (var minutes = 0; minutes < minsThisStretch; minutes += 1) {
+        var minutesRemain = minsThisStretch - minutes;
+        console.log(minutes + " Done, " + minutesRemain + " to go! ");
 
     }
-    console.log("I'm done with " + stretchNames + ".");
+    console.log("I'm done with " + stretchName + ".");
 }
-
+    console.log("After work out stretches are important!!");
 
 
 
