@@ -59,9 +59,14 @@ console.log("It's time to start a c2,5k training log" + " Week 4, day 3 involves
 
 var workOut = [ "upperbody", "lowerbody", "core", "cardio"];
 
-console.log(workOut);
+for (var i = 0; i < workOut.length; i++)  {
+    console.log("Work Out type:" + workOut[i]);
+}
 
-orkOutCount = workOut.length;
+
+
+
+
 
 /*workOutCount, lastworkOutIndex;
 
