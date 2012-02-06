@@ -53,7 +53,7 @@ console.log("It's time to start a c2,5k training log" + " Week 4, day 3 involves
  /*for ( warmUp = 0; warmUp < 5; warmUp++ 1) {
  console.log (warmUp + " Minutes until I Jog.");
  }
- console.log("\"Jog Now.\"");  */
+ console.log("\"Jog Now.\"");
 
 // Below: Arrays
 
@@ -62,7 +62,6 @@ var workOut = [ "upperbody", "off day", "lowerbody", "core", "cardio"],
 
 workOutCount = workOut.length;
 lastWorkOutIndex = workOutCount - 1;
-
 
 for (var i = 0; i < workOut.length; i++)  {
     console.log("Work Out type: " + workOut[i]);
@@ -77,16 +76,22 @@ for (var i = 0; i < workOut.length; i++)  {
 workOut[3] = "RUN!!";
 console.log( workOut);
 
-
-
-
-
-
 /*workOutCount, lastworkOutIndex;
 
 workOutCounts = workOut.length;
 
 lastworkOutIndex = workOutCount -1; */
+
+// Below: Functions
+
+var stretchNames ["back", "hamstring", "quads", "achilles"],
+    minsPerStretch = [2, 10, 5, 3];
+for (var stretchNumber = 0; stretchNumber < stretchNames.length; stretchNumber++ ) {
+    var stretchNames = stretchNames[stretchNumber],
+    minsPerStretch = minsPerStretch[stretchNumber];
+    console.log("Tarting to stretch the " + stretchNames + " for " + minsPerStretch + " minutes");
+
+}
 
 
 
