@@ -1,4 +1,4 @@
-/* alert("The story Begins in the morning!!");
+ alert("The story Begins in the morning!!");
 console.log(" First I have to decide if today is a good day to run?" +
 " Is the weather right today?");
 
@@ -50,7 +50,7 @@ console.log("It's time to start a c2,5k training log" + " Week 4, day 3 involves
  }
  console.log("\" Workout: DONE !!!\"");
 
- /*for ( warmUp = 0; warmUp < 5; warmUp++ 1) {
+ for ( warmUp = 0; warmUp < 5; warmUp+=1) {
  console.log (warmUp + " Minutes until I Jog.");
  }
  console.log("\"Jog Now.\"");
@@ -87,10 +87,15 @@ lastworkOutIndex = workOutCount -1; */
 var stretchNames = ["back", "hamstring", "quads", "achilles"],
     minsPerStretch = [2, 10, 5, 3];
 
-
+var stretchOneMuscle = function() {
+    consol.log("Maybe I'll make it a light day");
+}
 for (var stretchNumber = 0; stretchNumber < stretchNames.length; stretchNumber++) {
      var stretchName = stretchNames[stretchNumber],
         minsThisStretch = minsPerStretch[stretchNumber];
+var stretchAllMuscles = function() {
+        console.log("Better safe, the sorry. All Muscles should be done");
+    }
 
     console.log("Starting to stretch the " + stretchName + " for " + minsThisStretch + " minutes");
 
