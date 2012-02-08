@@ -86,22 +86,19 @@ lastworkOutIndex = workOutCount -1; */
 
 var stretchNames = ["back", "hamstring", "quads", "achilles"],
     minsPerStretch = [2, 10, 5, 3];
-
+// Trying "Arguments"
 var stretchOneMuscle = function() {
-    consol.log("Maybe I'll make it a light day");
-}
+
 for (var stretchNumber = 0; stretchNumber < stretchNames.length; stretchNumber++) {
      var stretchName = stretchNames[stretchNumber],
         minsThisStretch = minsPerStretch[stretchNumber];
-var stretchAllMuscles = function() {
-        console.log("Better safe, the sorry. All Muscles should be done");
-    }
 
     console.log("Starting to stretch the " + stretchName + " for " + minsThisStretch + " minutes");
 
     for (var minutes = 0; minutes < minsThisStretch; minutes += 1) {
         var minutesRemain = minsThisStretch - minutes;
         console.log(minutes + " Done, " + minutesRemain + " to go! ");
+    }
 
     }
     console.log("I'm done with " + stretchName + ".");
