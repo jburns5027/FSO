@@ -1,21 +1,21 @@
 alert("JavaScript works!");
 
-var passTest = true, flightsAvalible = true, failTest = false, flightsCanceled = false;
+/* var passTest = true, flightsAvalible = true, failTest = false, flightsCanceled = false;
 
 if ((passTest && flightsAvalible) || flightsCanceled) {
-    console.log("I can go to Califonia ");
+    console.log("Failed test. " + "Let's try it again");
 }   else {
     console.log("I need to retake test!!");
 }
 if (passTest && flightsAvalible)  {
-    console.log("Second time's the Charm" + " Now I get to Go!!");
+    console.log("Second time's the Charm." + " Now I get to Go!!");
 }
 else {
     console.log("I Finally get To Go!!!");
 }
-console.log("Flights Book." + " 2 Weeks left");
+console.log("Flights Booked." + " 2 Weeks left");
 
-var weekDay = 5, weekEnd = 2, weekTwo = 5, lastWeekend = 6;
+var weekDay = 5, weekEnd = 2, weekTwo = 5, lastWeekend = 2;
 
 while ( weekDay > 0 ) {
     console.log( weekDay + " Days left this week!");
@@ -41,7 +41,7 @@ while (lastWeekend > 0 ) {
 }
 console.log("Time to Go");
 
-var training = [ "orientation", "classWork", "handsOn", "Farewell",],
+var training = [ "orientation", "classWork", "handsOn", "Farewell", "Home"],
     trainingCount, lastTrainingIndex;
 
 trainingCount = training.length;
@@ -55,10 +55,30 @@ console.log("Monday: " + training[0],
     " Wedensday: " + training[2],
     " Thursday: " + training[1],
     " Friday: " + training[3],
-    " Saterday: " + training[1],
-    " Sunday: " + training[4]);
+    " Saterday: " + training[5]);
 training[3] = "Training!";
-console.log( training);
+console.log( training); */
+
+var sessionNames = ["intro", "proApp", "workShop"]
+var sessionNames = function() {
+
+    for (var sessionNumber = 0; sessionNumber < sessionNamesNames.length; sessionNumber++) {
+        var sessionName = sessionames[sessionNumber],
+            minsPerSession = minsPerSession[sessionNumber];
+
+        console.log("Starting the  " + sessionName + " for " + minsPerSession + " minutes");
+
+        for (var minutes = 0; minutes < minsPerSession; minutes += 1) {
+            var minutesRemain = minsPerSession - minutes;
+            console.log(minutes + " Done, " + minutesRemain + " to go! ");
+        }
+
+    }
+    console.log("I'm done with " + sessionName + ".");
+}
+// console.log("After work out stretches are important!!");
+
+
 
 
 
