@@ -41,5 +41,24 @@ while (lastWeekend > 0 ) {
 }
 console.log("Time to Go");
 
+var training = [ "orientation", "classWork", "handsOn", "Farewell",],
+    trainingCount, lastTrainingIndex;
+
+trainingCount = training.length;
+lastTrainingIndex = trainingCount - 1;
+
+for (var i = 0; i < training.length; i++)  {
+    console.log("Each Day's agenda: " + training[i]);
+}
+console.log("Monday: " + training[0],
+    " Tuesday: " + training[1],
+    " Wedensday: " + training[2],
+    " Thursday: " + training[1],
+    " Friday: " + training[3],
+    " Saterday: " + training[1],
+    " Sunday: " + training[4]);
+training[3] = "Training!";
+console.log( training);
+
 
 
