@@ -1,6 +1,6 @@
 // alert("JavaScript works!");
 
- var passTest = true, flightsAvalible = true, failTest = false, flightsCanceled = false;
+/* var passTest = true, flightsAvalible = true, failTest = false, flightsCanceled = false;
 
 if ((passTest && flightsAvalible) || flightsCanceled) {
     console.log("Failed test. " + "Let's try it again");
@@ -57,7 +57,8 @@ console.log("Monday: " + training[0],
     " Friday: " + training[3],
     " Saterday: " + training[5]);
 training[3] = "Training!";
-console.log( training); */
+console.log( training);
+;
 
 var sessionNames = ["intro", "proApp", "workShop"],
     minutesPerSession =[30, 60, 90];
@@ -73,9 +74,22 @@ for (var sessionNumber = 0; sessionNumber < sessionNames.length; sessionNumber +
              var minutesRemain = minutesThisSession - minutes;
         console.log(minutes + " Done" + minutesRemain + "to go!!");
     }
-    console.log("I'm done with " + sessionName + ".");
+    console.log("I'm done with " + sessionName + ".");   */
 
-}
+
+var joe = {
+    name: "Joe Burns",
+    Company: "Apple Inc",
+    Age: 29,
+    appleCerts: [
+        "iLife",
+        "iWork",
+        "Aperture"
+    ],
+    title:"Creative"
+
+};
+console.log( joe );
 
 
 
