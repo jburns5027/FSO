@@ -1,6 +1,6 @@
-alert("JavaScript works!");
+// alert("JavaScript works!");
 
-/* var passTest = true, flightsAvalible = true, failTest = false, flightsCanceled = false;
+ var passTest = true, flightsAvalible = true, failTest = false, flightsCanceled = false;
 
 if ((passTest && flightsAvalible) || flightsCanceled) {
     console.log("Failed test. " + "Let's try it again");
@@ -59,25 +59,23 @@ console.log("Monday: " + training[0],
 training[3] = "Training!";
 console.log( training); */
 
-var sessionNames = ["intro", "proApp", "workShop"]
-var sessionNames = function() {
+var sessionNames = ["intro", "proApp", "workShop"],
+    minutesPerSession =[30, 60, 90];
+for (var sessionNumber = 0; sessionNumber < sessionNames.length; sessionNumber ++){
 
-    for (var sessionNumber = 0; sessionNumber < sessionNamesNames.length; sessionNumber++) {
-        var sessionName = sessionames[sessionNumber],
-            minsPerSession = minsPerSession[sessionNumber];
+    var sessionName = sessionNames[sessionNumber],
+        minutesThisSession = minutesPerSession[sessionNumber];
 
-        console.log("Starting the  " + sessionName + " for " + minsPerSession + " minutes");
+    console.log (" Starting to teach " + sessionName + "for" +
+    minutesPerSession + "minutes.");
 
-        for (var minutes = 0; minutes < minsPerSession; minutes += 1) {
-            var minutesRemain = minsPerSession - minutes;
-            console.log(minutes + " Done, " + minutesRemain + " to go! ");
-        }
-
+        for (var minutes = 0; minutes <minutesThisSession; minutes +=5) {
+             var minutesRemain = minutesThisSession - minutes;
+        console.log(minutes + " Done" + minutesRemain + "to go!!");
     }
     console.log("I'm done with " + sessionName + ".");
-}
-// console.log("After work out stretches are important!!");
 
+}
 
 
 
