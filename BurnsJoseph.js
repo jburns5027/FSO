@@ -1,9 +1,7 @@
 alert("JavaScript works!");
 
 
-var a = 407;
-var b = 679;
-var c = 6333;
+
 // String that fallows a pattern
 var a = true, b = true, c = true;
 if (a === true) {
@@ -17,6 +15,11 @@ if (a === true) {
 }
 
 
+var email = "sjburns"  + "5027" + "@fullsail.edu";
+
+//car email =  + "5027" + "@fullsail.edu";
+
+console.log(email);
 
 
 
