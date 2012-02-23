@@ -27,8 +27,9 @@ var  num = [1,2,3,4,5],
 
 numCount = num.length;
 lastNumIndex = numCount -1;
+num.unshift(0);
 
-console.log(num[numCount-1]);
+console.log(num[1]);
 
 
 
