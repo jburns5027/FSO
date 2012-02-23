@@ -14,12 +14,23 @@ if (a === true) {
     console.log ("Not a Full Number");
 }
 
+// Email
 
 var email = "sjburns"  + "5027" + "@fullsail.edu";
 
 //car email =  + "5027" + "@fullsail.edu";
 
 console.log(email);
+
+var  num = [1,2,3,4,5],
+     numCount, lastNumIndex;
+
+numCount = num.length;
+lastNumIndex = numCount -1;
+
+console.log(num[numCount-1]);
+
+
 
 
 
