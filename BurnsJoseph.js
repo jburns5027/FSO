@@ -50,7 +50,13 @@ if ((https && www) || http) {
     console.log("http");
 }   else {
     console.log("https");
+
 }
+
+var a = 40;
+var b = 2;
+
+console.log(a + b);
 
 
 
