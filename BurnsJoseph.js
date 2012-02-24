@@ -30,10 +30,27 @@ lastNumIndex = numCount -1;
 num.unshift(0);
 
 console.log(num[1]);
-
+// Numbers
 var a = [1,2,3,4];
 console.log([1] + [3]);
 
+
+/* var http = true; https = false, www = false;
+
+
+if ((http && https) || www) {
+    console.log(" It's time to run!!");
+}   else {
+    console.log("No running today if it's cold, and wet");
+
+}  */
+var https = true, www = false, http = false;
+// Below: Booleen Logic
+if ((https && www) || http) {
+    console.log("http");
+}   else {
+    console.log("https");
+}
 
 
 
