@@ -31,6 +31,11 @@ num.unshift(0);
 
 console.log(num[1]);
 
+var a = [1,2,3,4];
+console.log([1] + [3]);
+
+
+
 
 
 
