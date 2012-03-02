@@ -1,12 +1,8 @@
 // alert("JavaScript works!");
 
+// var i =timePerDay
 
-var p = true, q = false, r = false;
-
-if (!(p || q)) {
-    console.log("All true");
-
-}  else {
-    console.log("All False");
-}
-
+var i = [120];
+for  (i = 120; i > 0; i-=10){
+    console.log( i + "Minuts left today");
+}  consile.log("Time to stop");
