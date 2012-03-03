@@ -1,8 +1,16 @@
 // alert("JavaScript works!");
 
 // var i =timePerDay
+// Arrays w/ loops and numbers.
 
-var i = [120];
-for  (i = 120; i > 0; i-=10){
-    console.log( i + "Minuts left today");
-}  consile.log("Time to stop");
+ var mins = [120,
+             60,
+             120,
+             60,
+             30];
+
+
+for  ( i = 0 ; mins < 100; mins++){
+      console.log( mins + " minutes remaining");
+
+}  console.log("Time to stop.");
