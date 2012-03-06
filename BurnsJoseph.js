@@ -35,12 +35,10 @@ getArea(radius);
 // Array Functions Bellow.
 var workOuts = [" Upper Body", "Lower Body", "Core"],
     minutesPerWorkOut = [ 60, 60, 30 ];
-var workOutOneArea = function(){
 
-    var workOut = workOuts[workOutNumber],
-        minutesThisWorkOut = minutesPerWorkOut[workOutNumber];
+var workOutOneArea = function( workOut, minutesThisWorkOut){
 
-    console.log("Starting to work out the" + workOut + " for "
+        console.log("Starting to work out the" + workOut + " for "
         + minutesThisWorkOut  + " minutes. ");
 
     for (var minutes = 0; minutes < minutesThisWorkOut; minutes+= 10) {
@@ -52,8 +50,14 @@ var workOutOneArea = function(){
 
 };
 
-for ( workOutNumber = 0; workOutNumber < workOuts.length; workOutNumber++) {
+var workOutAll = function( workOuts, minutesPerWorkOut) {
+    for ( var workOutNumber = 0; workOutNumber < workOuts.length; workOutNumber++) {
+        var workOut = workOuts[workOutNumber],
+            minutesThisWorkOut = minutesPerWorkOut[workOutNumber];
+        workOutOneArea( workOut, minutesThisWorkOut );
 
-    workOutOneArea();
+    }
 
 }
+
+ workOutAll( workOuts, minutesPerWorkOut);
