@@ -30,7 +30,7 @@ getArea(5);
 getArea(10);
 getArea(radius);
 
-*/
+
 
 // Array Functions Bellow.
 var workOuts = [" Upper Body", "Lower Body", "Core"],
@@ -61,3 +61,27 @@ var workOutAll = function( workOuts, minutesPerWorkOut) {
 }
 
  workOutAll( workOuts, minutesPerWorkOut);
+ */
+
+
+ // boolean functions.
+ var sunny = true, hot = true, cold = false, rain = false;
+
+
+var chooseLocation = function() {
+    if (( s &&  h) || c) {
+        console.log(" Run");
+
+    } else console.log(" Don't run.");
+};
+
+var s = sunny,
+    h = hot,
+    c = cold,
+    r = rain;
+
+chooseLocation()
+
+
+
+
