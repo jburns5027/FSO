@@ -86,3 +86,18 @@ var getBodySection = function (area) {
   var chooseArea =  getBodySection("upper")
 
     console.log(chooseArea);
+
+// Procedure Below.
+
+var getShoes = function (cost) {
+    if ( cost <= 75) {
+        console.log("I'm going to buy new sneakers!!");
+    } else {
+        console.log("Way to expensive for me.");
+    }
+
+
+
+}
+
+  getShoes(70)
