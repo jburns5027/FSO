@@ -15,6 +15,7 @@ for  ( i = 0 ; mins < 100; mins++){
 
 
 // String  Function
+
 var pi  = 5;
 var radius = 0;
 
@@ -33,6 +34,8 @@ getArea(radius);
 
 
 // Array Functions Bellow.
+
+
 var workOuts = [" Upper Body", "Lower Body", "Core"],
     minutesPerWorkOut = [ 60, 60, 30 ];
 
@@ -61,27 +64,56 @@ var workOutAll = function( workOuts, minutesPerWorkOut) {
 }
 
  workOutAll( workOuts, minutesPerWorkOut);
+
+
  */
 
 
+
+
+
  // boolean functions.
- var sunny = true, hot = true, cold = false, rain = false;
 
 
-var chooseLocation = function() {
-    if (( s &&  h) || c) {
-        console.log(" Run");
 
-    } else console.log(" Don't run.");
+
+var chooseLocation = function(temp, weather ) {
+    if((temp == "hot") && (weather == "sunny")) {
+        console.log("It's hot, and sunny.  Let's go running outside.");
+        return true;
+    } else {
+        console.log(" It's cold, and raining. Looks like the treadmill is in my future.");
+        return false;
+    }
 };
 
-var s = sunny,
-    h = hot,
-    c = cold,
-    r = rain;
 
-chooseLocation()
+var outside = chooseLocation("hot","sunny");
+//console.log(chooseLocation("hot","sunny"));
+//console.log(outside);
+if (outside === true){
+    console.log("Let's take a run outside.");
+} else {
+    console.log("Looks like the treadmill is in my future.");
+}
 
 
 
 
+
+// While Loop Function Bellow
+
+var getCountDown = function(min, total) {
+    var runTime = min;
+    while ( min > 0) {
+
+        console.log (min + " Minutes left in my " + total + " minute workout");
+        min-=10;
+    }
+
+};
+
+getCountDown(60, 60)
+
+
+// String
