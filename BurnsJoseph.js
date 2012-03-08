@@ -1,40 +1,7 @@
-/*
-// alert("JavaScript works!");
-
-// Arrays w/ loops and numbers.
- var mins = [120, 60, 120, 60, 30],
-     minsCount;
-
-minsCount =  mins.length;
-
-
-for  ( i = 0 ; mins < 100; mins++){
-      console.log( mins + " minutes remaining");
-
-}   console.log( minsCount);
-
-
-// String  Function
-
-var pi  = 5;
-var radius = 0;
-
-var getArea = function (r, name) {
-    var area = r * r * pi;
-    console.log( area, name );
-
-
- }
-
-getArea(20, name);
-getArea(5);
-getArea(10);
-getArea(radius);
 
 
 
 // Array Functions Bellow.
-
 
 var workOuts = [" Upper Body", "Lower Body", "Core"],
     minutesPerWorkOut = [ 60, 60, 30 ];
@@ -66,16 +33,8 @@ var workOutAll = function( workOuts, minutesPerWorkOut) {
  workOutAll( workOuts, minutesPerWorkOut);
 
 
- */
-
-
-
-
 
  // boolean functions.
-
-
-
 
 var chooseLocation = function(temp, weather ) {
     if((temp == "hot") && (weather == "sunny")) {
@@ -116,4 +75,14 @@ var getCountDown = function(min, total) {
 getCountDown(60, 60)
 
 
-// String
+// String Function Below.
+
+var getBodySection = function (area) {
+    var bodyArea = "Today I'm working out the " + area + " part of my body.";
+
+   return bodyArea ;
+}
+
+  var chooseArea =  getBodySection("upper")
+
+    console.log(chooseArea);
