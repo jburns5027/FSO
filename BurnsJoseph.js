@@ -46,13 +46,43 @@ var bodyMuscles = {
     }
 }
 
-
 var chooseArea = bodyMuscles.getBodySection("upper")
 console.log(chooseArea);
 
 
 
 
+// boolean functions.
+
+ var outSideClothes = {
+     shirt: ["short Sleeve",
+             "dry fit material",
+             "white"],
+     legwear: [
+                "shorts",
+                "light cotton",
+                 "blue"
+              ],
+     chooseLocation: function(temp, weather ) {
+        if((temp == "hot") && (weather == "sunny")) {
+            console.log("It's hot, and sunny.  Let's go running outside.");
+            return true;
+        } else {
+            console.log(" It's cold, and raining. Looks like the treadmill is in my future.");
+            return false;
+        }
+    }
+
+}
+
+ var outside = outSideClothes.chooseLocation("hot","sunny");
+//console.log(chooseLocation("hot","sunny"));
+//console.log(outside);
+if (outside === true){
+    console.log("Let's take a run outside.");
+} else {
+    console.log("Looks like the treadmill is in my future.");
+}
 
 
 
