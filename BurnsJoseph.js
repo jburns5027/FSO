@@ -23,6 +23,8 @@ shoes.getShoes(70);
 
 
 
+
+
 // String Function Below.
 
 var bodyMuscles = {
@@ -48,6 +50,8 @@ var bodyMuscles = {
 
 var chooseArea = bodyMuscles.getBodySection("upper")
 console.log(chooseArea);
+
+
 
 
 
@@ -83,6 +87,71 @@ if (outside === true){
 } else {
     console.log("Looks like the treadmill is in my future.");
 }
+
+
+
+
+
+// Array Functions Bellow.
+var equipment = {
+       weight:"25",
+       material: "iron",
+       type: "dumbell",
+
+
+ workOutOneArea: function( workOut, minutesThisWorkOut){
+   var workOuts = [" Upper Body", "Lower Body", "Core"],
+         minutesPerWorkOut = [ 60, 60, 30 ];
+
+    console.log("Starting to work out the" + workOut + " for "
+        + minutesThisWorkOut  + " minutes. ");
+
+    for (var minutes = 0; minutes < minutesThisWorkOut; minutes+= 10) {
+        var minutesRamain = minutesThisWorkOut - minutes;
+        console.log( minutes + " done, " + minutesRamain + " to Go!!");
+
+    }
+    console.log( "I'm done working out the " + workOut + "!!");
+
+},
+  /*
+    workOutAll:function ( workOuts, minutesPerWorkOut) {
+    for ( var workOutNumber = 0; workOutNumber < workOuts.length; workOutNumber++) {
+        var workOut = workOuts[workOutNumber],
+            minutesThisWorkOut = minutesPerWorkOut[workOutNumber];
+        workOutOneArea( workOut, minutesThisWorkOut );
+
+    }  */
+
+}
+ var key = equipment.weight;
+console.log("Using the " + [ key ] + "LB weight.");
+
+equipment.workOutOneArea( " lower body", " 60");
+// equipment.workOutAll( " lower body", " 60");
+
+
+
+
+
+// While Loop Function Bellow
+var c25k = {
+     platform:"IOS",
+     catagory: "fitness",
+     durationPerWorkOut:"30mins",
+     durationTotal: "9 months",
+     getCountDown: function(min, total) {
+            var runTime = min;
+            while ( min > 0) {
+
+                console.log (min + " Minutes left in my " + total + " minute workout");
+                min-=10;
+            }
+
+        }
+}
+
+c25k.getCountDown(60, 90)
 
 
 
