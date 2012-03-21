@@ -28,13 +28,24 @@ return {
 
             },
 
-             sumOfNum: function ( ['a',1,'b',2,'c',3,'d',4]) {
-                 var sum = 0;
-                 for (var i=0; i<sum.length; i++) {
-                     if (!isNaN(parseInt(arr[i]))) { sum += [i]; }
-                 }
-                 alert(sum);
-             }
+             sumOfNum: function () {
+                var numval =  [,1,2,3,4];
+
+
+                 numval.sort();
+
+                //for (i=0; i<=numval.length; i++){
+                    //numval += numval[i]
+                 return numval
+
+                },
+                stringToNum: function () {
+                    var strNum = parseInt("42");
+                    return strNum;
+             },
+              smallValue: function (14 ) {
+                  return math.ceil(14);
+              }
 
 
 
@@ -45,29 +56,34 @@ return {
 
 
 
+       }
 
 
 
-
-
-        }
-
-
-
-};
+}
 
 
 
 
 var lib = jLib();
 var checkNumber = lib.getNumber( "404-679-0100" )
-console.log( checkNumber );
+    console.log( checkNumber );
 
 var checkEmail = lib.getEmail( "jburns5027@fullsail.edu" )
-console.log( checkEmail);
+    console.log( checkEmail);
 
 var checkURl = lib.getUrl( "http://www.fullsail.edu")
-console.log( checkURl);
+    console.log( checkURl);
+
+var addNum = lib.sumOfNum()
+    console.log(addNum);
+
+var getNum = lib.stringToNum()
+    console.log( getNum);
+
+var getVal = lib.smallValue()
+    console.log( getVal );
+
 
     /*
 
@@ -80,4 +96,8 @@ console.log( checkURl);
      }
      return mn;
      };
+
+
+
+
         */
