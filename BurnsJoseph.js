@@ -1,8 +1,9 @@
 // alert("JavaScript works!");
 
-// String Fallowing a Phone Number below.
+
 var jLib = function() {
 return {
+    // Validating a Phone Number below
             getNumber: function validatePhoneNumber(elementValue){
             var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
                 if (phoneNumberPattern.test(elementValue)); {
@@ -11,6 +12,7 @@ return {
                 return phoneNumberPattern.test(elementValue);
                 }
             },
+    // String Validation an Email pattern.
             getEmail: function validateEmail(elementValue) {
                 var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
                 if (emailPattern.test(elementValue));{
@@ -18,6 +20,7 @@ return {
                     return emailPattern.test(elementValue);
                 }
             },
+    // Validation a URL.
             getUrl: function isUrl( elementValue ) {
                 var urlPattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
                 if ( urlPattern.test(elementValue));{
@@ -27,7 +30,7 @@ return {
 
 
             },
-
+     // Number
              sumOfNum: function () {
                 var numval =  [,1,2,3,4];
 
@@ -39,27 +42,25 @@ return {
                  return numval
 
                 },
-                stringToNum: function () {
-                    var strNum = parseInt("42");
+    // Turning a string to a number.
+                stringToNum: function (x) {
+                    var strNum = parseInt(x);
                     return strNum;
              },
-              smallValue: function (14 ) {
-                  return math.ceil(14);
-              }
+    // Changing value of a number.
+              smallValue: function (x) {
+                  //x = 14.2;
+                   myNum = (Math.floor( x )+1.100);
 
-
-
-
-
-
-
-
-
-
-       }
-
-
-
+                  return myNum;
+              },
+    // Upper casing letters.
+                upperCase: function (x) {
+                    var lowerText= x;
+                    console.log(lowerText.toLocaleUpperCase());
+                    return lowerText;
+                }
+        }
 }
 
 
@@ -78,12 +79,13 @@ var checkURl = lib.getUrl( "http://www.fullsail.edu")
 var addNum = lib.sumOfNum()
     console.log(addNum);
 
-var getNum = lib.stringToNum()
+var getNum = lib.stringToNum( "42" )
     console.log( getNum);
 
-var getVal = lib.smallValue()
+var getVal = lib.smallValue( "9.10")
     console.log( getVal );
-
+var getCases = lib.upperCase(" abcdef")
+    console.log( getCases );
 
     /*
 
