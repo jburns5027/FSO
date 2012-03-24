@@ -39,9 +39,9 @@ return {
 
                 //for (i=0; i<=numval.length; i++){
                     //numval += numval[i]
-                 return numval
+                return numval
 
-                },
+             },
     // Turning a string to a number.
                 stringToNum: function (x) {
                     var strNum = parseInt(x); //parseIn Returns value as a number.
@@ -58,8 +58,13 @@ return {
                 upperCase: function (x) {
                     var lowerText= x;
                     console.log(lowerText.toLocaleUpperCase()); // Upper cases the string
-                    return lowerText;   // returning what the var is asking, in this case, to capt the letters.
+                   return lowerText;   // returning what the var is asking, in this case, to capt the letters.
                 }
+
+
+
+
+
         }
 }
 
