@@ -9,6 +9,19 @@
 </header>
 	<h1>Add a Workout.</h1>
 	<body>
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Pre-Workout Checklist:</legend>
+				<ul>
+					<li>Apparel:
+						<ul>
+							<li><input type="checkbox" value="headband" id="headband" /><label for="headband">Headband</label></li>
+							<li><input type="checkbox" value="Tank Top" id="tanktop" /><label for="tanktop">Tank Top</label></li>
+							<li><input type="checkbox" value="T-Shirt" id="tshirt" /><label for="tshirt">T-Shirt</label></li>
+							<li><input type="checkbox" value="Compression Top" id="compressiontop" /><label for="Compressiontop">Compression Top</label></li>
+							<li><input type="checkbox" value="headband" id="headband" /><label for="headband">Headband</label></li>
+							
+				</fieldset>
 		
 		<form action="#" method="post">
 			<fieldset>
@@ -21,23 +34,38 @@
 					<option value="Weight">Weight</option>
 					<option value="Core">Core</option>
 				</select>
-		    </ul>
 		    
-		<ul>
+		    
+		
 			<li><label for "WoName">Workout:</label><input type="text" id="WoName" /></li>	
-		</ul>
-		<ul>
-				<li><input type="radio" checked value="Yes" id="Yes" name="yesorno" / ><label for="Yes">Yes</label></li>
-				<li><input type="radio"  value="No" id="No" name="yesorno" / ><label for="No">No</label></li>
-		</ul>
-		<ul>
+		
+		
+			<li >Did you complete the workout?:
+				<ul>
+					<li><input type="radio" checked value="Yes" id="Yes" name="yesorno" / ><label for="Yes">Yes</label></li>
+					<li><input type="radio"  value="No" id="No" name="yesorno" / ><label for="No">No</label></li>
+				</ul>	
+		
+		
 			<li><label for="Date-Completed">Date Completed:</label><input type="date" id="Date-Completed" date="date"></li>
+		
+		
+			<label for="timeOday">Time of day workout was completed:</label>
+				<select id="Time of day workout was completed:">
+					<option value="Morning">Morning</option>
+					<option value="Afternoon">Afternoon</option>
+					<option value="Evening">Evening</option>
+				</select>
 		</ul>
+		
+		</fieldset>
 			
 			
 
 <footer>
-   <li><a href="file:///Users/Joe/Desktop/FSO/html/additem.html">add a workout</a></li> 
+   
+   
+   <input type="submit" value="Log Workout!" />
 </footer>
 <script type="text/javascript" src="BurnsJoseph,project1.js"></script>
 </body>
