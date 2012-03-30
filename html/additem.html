@@ -3,7 +3,9 @@
 <head>
     <title>Exercise Log</title>
 </head>
+<!-- header and h1 tags can not be outside the body tag-->
 <header>
+	<!-- don't leave empty tags in your file. if there is no content the tag is not needed-->
     </header>
 	<h1>Add a Workout.</h1>
 	<body>
@@ -32,40 +34,43 @@
 								<li><input type="checkbox" value="Water Bottle" id="waterbottle" /><label for="waterbottle">Water Bottle</label></li>
 							</ul>		
 				</fieldset>
-		<form action="#" method="post">
-			<fieldset>
-			<legend>Workout</legend>
-			<ul>
-				<label for="Workout">Type of Workout</label>
-				
-				<select id="Workout">
-					<option value="Cardio">Cardio</option>
-					<option value="Weight">Weight</option>
-					<option value="Core">Core</option>
-				</select>
-		    <li><label for "WoName">Workout:</label><input type="text" id="WoName" /></li>	
-		<li >Did you complete the workout?:
-				<ul>
-					<li><input type="radio" checked value="Yes" id="Yes" name="yesorno" / ><label for="Yes">Yes</label></li>
-					<li><input type="radio"  value="No" id="No" name="yesorno" / ><label for="No">No</label></li>
-				</ul>	
-		<li><label for="Date-Completed">Date Completed:</label><input type="date" id="Date-Completed" date="date"></li>
-			<label for="timeOday">Time of day workout was completed:</label>
-				<select id="Time of day workout was completed:">
-					<option value="Morning">Morning</option>
-					<option value="Afternoon">Afternoon</option>
-					<option value="Evening">Evening</option>
-				</select>
-		</ul>
-		<ul>
-			<li>Intensity(0 = Sluggish/ 100 = Over Done):
-				<input id="slider1" type="range" min="100" max="100" step="5" />
-		</ul>
-		</fieldset>
-		 <input type="submit" value="Log Workout!" />
-		 </form>
-<footer>
-	
-</footer>
+				<fieldset>
+						<legend>Workout</legend>
+						<ul>
+							<!--Needs LI tags-->
+							<label for="Workout">Type of Workout</label>
+							
+							<select id="Workout">
+								<option value="Cardio">Cardio</option>
+								<option value="Weight">Weight</option>
+								<option value="Core">Core</option>
+							</select>
+					    <li><label for "WoName">Workout:</label><input type="text" id="WoName" /></li>	
+							<li >Did you complete the workout?:
+							<ul>
+								<li><input type="radio" checked value="Yes" id="Yes" name="yesorno" / ><label for="Yes">Yes</label></li>
+								<li><input type="radio"  value="No" id="No" name="yesorno" / ><label for="No">No</label></li>
+							</ul>	
+							<!-- Need closing li tag-->
+							<li><label for="Date-Completed">Date Completed:</label><input type="date" id="Date-Completed" date="date"></li>
+							<!-- Must be within an li tag
+							<label for="timeOday">Time of day workout was completed:</label>
+							<select id="Time of day workout was completed:">
+								<option value="Morning">Morning</option>
+								<option value="Afternoon">Afternoon</option>
+								<option value="Evening">Evening</option>
+							</select>
+							-->
+						</ul>
+						<ul>
+							<li>Intensity(0 = Sluggish/ 100 = Over Done):
+								<input id="slider1" type="range" min="100" max="100" step="5" /><!-- close your li-->
+						</ul>
+				</fieldset>
+		 		<input type="submit" value="Log Workout!" />
+		 	</form>
+			<footer>
+				<!-- don't leave empty tags in your file. if there is no content the tag is not needed-->
+			</footer>
 	</body>
 </html>
