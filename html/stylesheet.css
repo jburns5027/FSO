@@ -1,8 +1,16 @@
 
-
+body{
+background:#82CAFA;
+}
 
 h1 {
+text-align: center;
 margin: 20px;
-border: 10px solid red;
-font-style: italic
+border: 30px #FFFC17;
+font-style: italic;
+background: #306EFF;
 }
+ footer {
+ font-style: bold;
+ }
+
