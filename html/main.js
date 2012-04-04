@@ -23,12 +23,12 @@ window.addEventListener("DOMContentLoaded" , function(){
    			var optTest = workOutGroups[i];
    			makeOption.setAttribute("valure", optTest);
    			makeOption.innerHTML = optText;
-   			
+   			makeSelect.appendChild(makeOption);
    		
    		
    		}
-   
-   
+   		selectLi.appendChild(makeSelect);
+   		getWorkOut();
    }
    
    // variable defaults
