@@ -1,6 +1,6 @@
 // JavaScript Document
 
-
+// Wait until the DOM is Ready.
 window.addEventListener("DOMContentLoaded" , function(){
 
 
@@ -11,86 +11,87 @@ window.addEventListener("DOMContentLoaded" , function(){
    return theElement;
    }
    
-   
    // Create Select Field Element and populate with options.
-   finction getWorkOut (){
+   function makeWorkOuts(){
    		var formTag = document.getElementsByTagName("form"),     // formTag is array of all of the form tags. 
-   		selectLi = $("select"),
-   		makeSelect = document.createElement("select");
-   		makeSelect.setAttribute("id", "groups");
-   		for ( i=0; j=workOutGroups.length; i<j; i++) {
-   			var makeOption = document.createElement("option")
-   			var optTest = workOutGroups[i];
-   			makeOption.setAttribute("valure", optTest);
+   			selectLi = $('select'),
+   			makeSelect = document.createElement('select');
+   			makeSelect.setAttribute("id", "groups");
+   		for (var i=0, j=workOutGroups.length; i<j; i++) {
+   			var makeOption = document.createElement('option');
+   			var optText = workOutGroups[i];
+   			makeOption.setAttribute("value", optText);
    			makeOption.innerHTML = optText;
    			makeSelect.appendChild(makeOption);
    		}
    		selectLi.appendChild(makeSelect);
-   		getWorkOut();
-   	}	
-   		// Find the Value of a selected radio button.
+   	  }
+   	 	// Find the Value of a selected radio button.
    		funtion getSelectedRadio() {
-   			var radios = document.form(0).yesorno
-   			for (var i=0; i<radio.length; i++) {
-   			if(radios[i].checked){
-   			yesornoValue = radios[i].value;
-   				
+   			var radios = document.forms(0).yesorno;
+   			for(var i=0; i<radio.length; i++) {
+   				if(radios[i].checked){
+   				yesornoValue = radios[i].value;
    			}
-   		}   		
-   }
-   function getCheckBoxValue() {
-   if($("yes").checked){
-   		yesValue =  $("yes").value;
-   }else{yesValue = "no"
-   }
-}
-   
-   function  storeData(){
-   		var id        		= Math.floor(Math.random()*1000000001);
+   		}	
+   	}	   		
+/*
+function getCheckBoxValue() {
+		if($("yes").checked){
+			yesValue =  $("yes").value;
+		}else{yesValue = "no"
+		}
+    }
+*/ 
+   	  function  storeData(){
+   		var id        		= Math.floor(Math.random()*100000000001);
    		// Gather all of our form field values and store in an object.
-   		// Object properties contain array with the form labeland input value.
+   		// Object properties contain array with the form label and input value.
    		getSelectedRadio();
+   		/*
    		getCheckBoxValue();
-   		var item        	={};
-   		var item.headband			=["Headband", $(headband).value];
-   		var item.tanktop			=["Tank Top, $(tanktop).value];
-   		var item.tshirt				=["T-Shirt", $(tshirt).value];
-   		var item.compressiontop		=["Compression Top", $(compressiontop).value];
-   		var item.hoodie				=["Hoodie", $(hoodie).value];
-   		var item.compressionpants	=["Compression Pants", $(compressionpants).value];
-   		var item.dryfitshorts		=["Dry Fit Shorts", $(dryfitshorts).value];
-   		var item.compressionsocks	=["Compression Socks", $(compressionsock).value];
-   		var item.runningshoes		=["Running Shoes", $(runningshoes).value];
-   		var item.iphone				=["iPhone", $(iphone).value];
-   		var item.headphones			=["Head Phones", $(headphones).value];
-   		var item.heartratemonitor	=["Heartrate Monitor", $(heartratemonitor).value];
-   		var item.fitnessapp			=["Fitness App", $(fitnessapp).value];
-   		var item.waterbottle		=["Water Bottle", $(waterbottle).value];
-   		var item.group				=["Group", $("groups").value];
-   		var item.yesorno			=["Completed:", $(completed).value];
-   		var item.dcompeted			=["Date Completed", $(dcompleted).value];
+   		*/
+   		var item        				={};
+   			 item.headband			 	=["Headband", $(headband).value];
+   			 item.tanktop				=["Tank Top", $(tanktop).value];
+   			 item.tshirt				=["T-Shirt", $(tshirt).value];
+   			 item.compressiontop		=["Compression Top", $(compressiontop).value];
+   			 item.hoodie				=["Hoodie", $(hoodie).value];
+   			 item.compressionpants		=["Compression Pants", $(compressionpants).value];
+   			 item.dryfitshorts			=["Dry Fit Shorts", $(dryfitshorts).value];
+   			 item.compressionsocks		=["Compression Socks", $(compressionsock).value];
+   			 item.runningshoes			=["Running Shoes", $(runningshoes).value];
+   			 item.iphone				=["iPhone", $(iphone).value];
+   			 item.headphones			=["Head Phones", $(headphones).value];
+   			 item.heartratemonitor		=["Heartrate Monitor", $(heartratemonitor).value];
+   			 item.fitnessapp			=["Fitness App", $(fitnessapp).value];
+   			 item.waterbottle			=["Water Bottle", $(waterbottle).value];
+   			 item.group					=["Group", $("groups").value];
+   			 item.yesorno				=["Completed:", $(completed).value];
+   			 item.dcompeted				=["Date Completed", $(dcompleted).value];
+   			 // Save Data into local Storage: Use Stringify to convet our object to a string.
    		localStorage.setItem(id, JSON.stringify(item));
-   		alert("Workout Saved");
+   		alert("Workout Saved!");
+   }  
+   
+   function getData(){
+   		// Write data from local storage to browser.
+   		var makeDiv = document.createElement('div');
+   		makeDiv
    }
-   
-   // variable defaults
-   var workOutGroups = ["--Choose A Group--", "cardio", "weight", "core" ];
-   yesornoValue
-   
+   	 
+   	 // Variable defaults
+   	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"];
+   	 	yesornoValue;
+   	makeWorkOuts();  
    
    
    // set links, and click events
-	var displayLink =  $("displayLink");
-	displayLink.addEventListener("click", getData)
-	var clearLink = $("clear");
+	var displayLink =  $('displayLink');
+	displayLink.addEventListener("click", getData);
+	var clearLink = $('clear');
 	clearLink.addEventListener("clear", clearLocal);
-	var save = $("submit");
+	var save = $('submit');
 	 save.addEventListener("click", storeData):
-
-
-
-
-
-
 
 });
