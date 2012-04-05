@@ -1,11 +1,7 @@
 // JavaScript Document
-
 // Wait until the DOM is Ready.
 window.addEventListener("DOMContentLoaded" , function(){
-
-
-
-   // getElementById function:
+	  // getElementById function:
    function $(x){
    var theElement = document.getElementById(x);
    return theElement;
@@ -27,7 +23,7 @@ window.addEventListener("DOMContentLoaded" , function(){
    		selectLi.appendChild(makeSelect);
    	  }
    	 	// Find the Value of a selected radio button.
-   		funtion getSelectedRadio() {
+   		funtion getSelectedRadio(){
    			var radios = document.forms(0).yesorno;
    			for(var i=0; i<radio.length; i++) {
    				if(radios[i].checked){
@@ -41,6 +37,27 @@ function getCheckBoxValue() {
 			yesValue =  $("yes").value;
 		}else{yesValue = "no"
 		}
+    }
+    
+    function toggleControls(n){
+    	switch(n){
+    		case "on":
+    		    $('contactForm').style.display ="none";
+    		    $('clear').style.display = "inline";
+    		    $('displayLink').style.display = "none";
+    		    $('addNew').style.display = "inline";
+    			break;
+    	   case "off":
+    	   		$('contactForm').style.display ="block";
+    		    $('clear').style.display = "inline";
+    		    $('displayLink').style.display = "inline";
+    		    $('addNew').style.display = "none";
+    		    $('items').style.display = "none"; 
+    	   		break;
+    	   default:
+    	   return false;
+    	}
+    
     }
 */ 
    	  function  storeData(){
@@ -73,18 +90,49 @@ function getCheckBoxValue() {
    		localStorage.setItem(id, JSON.stringify(item));
    		alert("Workout Saved!");
    }  
-   
    function getData(){
+   		toggleControls("on");
+   		if(localStorage.length ===0){
+   		alert("There is no data in local storage.");
+   		}
    		// Write data from local storage to browser.
    		var makeDiv = document.createElement('div');
-   		makeDiv
-   }
-   	 
+   		makeDiv.setAttribute("id", "items');
+   		var makeList = document.createElement('ul');
+   		makeDiv.appendChild(makeList):
+   		document.body.appendChild(makeDiv);
+   		$('items').style.display = "block";
+   		for(var i=0, len=localStorage.length; i<len;i==){
+   			var makeli = document.createElement('li');
+   		makeList.appendChild(makeli);
+   		var key = localStorge.key(i);
+   		var value = localStorage.getItem(key);
+   		// Convert the string from local storage back to an object by using json.parse.
+   		var obj = JSON.parse(value);
+   		var makeSubList = document.createElement('ul');
+   		makeli.appendChild(makeSubList);
+   		for(var n in obj){
+   		var makeSubli = document.createElement('li');
+   		makeSubList.appendChild(makeSubli);
+   		var optSubText = obj[n][0]+" "+obj[n][1];
+   		makeSubli.innerHTML = optSubList;
+   		}
+   	}
+}
+	function clearLocal(){
+		if(localStorage.length ===0){
+			alert("There is no Data to Clear.");
+		}else{
+			localStorage.clear();
+			alert("All Data has been Deleted");
+			window.location.reload();
+			return false;
+		}
+	}
    	 // Variable defaults
    	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"];
    	 	yesornoValue;
    	makeWorkOuts();  
-   
    
    // set links, and click events
 	var displayLink =  $('displayLink');
