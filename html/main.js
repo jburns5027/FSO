@@ -23,9 +23,9 @@ window.addEventListener("DOMContentLoaded" , function(){
    		selectLi.appendChild(makeSelect);
    	  }
    	 	// Find the Value of a selected radio button.
-   		funtion getSelectedRadio(){
+   		function getSelectedRadios(){
    			var radios = document.forms(0).yesorno;
-   			for(var i=0; i<radio.length; i++) {
+   			for(var i=0; i<radio.length; i++){
    				if(radios[i].checked){
    				yesornoValue = radios[i].value;
    			}
@@ -97,12 +97,12 @@ function getCheckBoxValue() {
    		}
    		// Write data from local storage to browser.
    		var makeDiv = document.createElement('div');
-   		makeDiv.setAttribute("id", "items');
+   		makeDiv.setAttribute("id", 'items');
    		var makeList = document.createElement('ul');
-   		makeDiv.appendChild(makeList):
+   		makeDiv.appendChild(makeList);
    		document.body.appendChild(makeDiv);
    		$('items').style.display = "block";
-   		for(var i=0, len=localStorage.length; i<len;i==){
+   		for(var i=0; len=localStorage.length; i<len; i===){
    			var makeli = document.createElement('li');
    		makeList.appendChild(makeli);
    		var key = localStorge.key(i);
