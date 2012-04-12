@@ -24,10 +24,10 @@ window.addEventListener("DOMContentLoaded" , function(){
    	  }
    	 	// Find the Value of a selected radio button.
    		function getSelectedRadios(){
-   			var radios = document.forms(0).yesorno;
+   			var radio = document.forms[0].yesorno;
    			for(var i=0; i<radio.length; i++){
-   				if(radios[i].checked){
-   				yesornoValue = radios[i].value;
+   				if(radio[i].checked){
+   				yesornoValue = radio[i].value;
    			}
    		}	
    	}	   		
@@ -64,28 +64,28 @@ function getCheckBoxValue() {
    		var id        		= Math.floor(Math.random()*100000000001);
    		// Gather all of our form field values and store in an object.
    		// Object properties contain array with the form label and input value.
-   		getSelectedRadio();
+   		getSelectedRadios();
    		/*
    		getCheckBoxValue();
    		*/
    		var item        				={};
-   			 item.headband			 	=["Headband", $(headband).value];
-   			 item.tanktop				=["Tank Top", $(tanktop).value];
-   			 item.tshirt				=["T-Shirt", $(tshirt).value];
-   			 item.compressiontop		=["Compression Top", $(compressiontop).value];
-   			 item.hoodie				=["Hoodie", $(hoodie).value];
-   			 item.compressionpants		=["Compression Pants", $(compressionpants).value];
-   			 item.dryfitshorts			=["Dry Fit Shorts", $(dryfitshorts).value];
-   			 item.compressionsocks		=["Compression Socks", $(compressionsock).value];
-   			 item.runningshoes			=["Running Shoes", $(runningshoes).value];
-   			 item.iphone				=["iPhone", $(iphone).value];
-   			 item.headphones			=["Head Phones", $(headphones).value];
-   			 item.heartratemonitor		=["Heartrate Monitor", $(heartratemonitor).value];
-   			 item.fitnessapp			=["Fitness App", $(fitnessapp).value];
-   			 item.waterbottle			=["Water Bottle", $(waterbottle).value];
+   			 item.headband			 	=["Headband", $("headband").value];
+   			 item.tanktop				=["Tank Top", $("tanktop").value];
+   			 item.tshirt				=["T-Shirt", $("tshirt").value];
+   			 item.compressiontop		=["Compression Top", $("compressiontop").value];
+   			 item.hoodie				=["Hoodie", $("hoodie").value];
+   			 item.compressionpants		=["Compression Pants", $("compressionpants").value];
+   			 item.dryfitshorts			=["Dry Fit Shorts", $("dryfitshorts").value];
+   			 item.compressionsocks		=["Compression Socks", $("compressionsock").value];
+   			 item.runningshoes			=["Running Shoes", $("runningshoes").value];
+   			 item.iphone				=["iPhone", $("iphone").value];
+   			 item.headphones			=["Head Phones", $("headphones").value];
+   			 item.heartratemonitor		=["Heartrate Monitor", $("heartratemonitor").value];
+   			 item.fitnessapp			=["Fitness App", $("fitnessapp").value];
+   			 item.waterbottle			=["Water Bottle", $("waterbottle").value];
    			 item.group					=["Group", $("groups").value];
-   			 item.yesorno				=["Completed:", $(completed).value];
-   			 item.dcompeted				=["Date Completed", $(dcompleted).value];
+   			 item.yesorno				=["Completed:", $("completed").value];
+   			 item.dcompeted				=["Date Completed", $("dcompleted").value];
    			 // Save Data into local Storage: Use Stringify to convet our object to a string.
    		localStorage.setItem(id, JSON.stringify(item));
    		alert("Workout Saved!");
@@ -102,7 +102,7 @@ function getCheckBoxValue() {
    		makeDiv.appendChild(makeList);
    		document.body.appendChild(makeDiv);
    		$('items').style.display = "block";
-   		for(var i=0; len=localStorage.length; i<len; i===){
+   		for(var i=0, len=localStorage.length; i<len; i++){
    			var makeli = document.createElement('li');
    		makeList.appendChild(makeli);
    		var key = localStorge.key(i);
@@ -130,7 +130,7 @@ function getCheckBoxValue() {
 		}
 	}
    	 // Variable defaults
-   	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"];
+   	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"],
    	 	yesornoValue;
    	makeWorkOuts();  
    
@@ -139,7 +139,7 @@ function getCheckBoxValue() {
 	displayLink.addEventListener("click", getData);
 	var clearLink = $('clear');
 	clearLink.addEventListener("clear", clearLocal);
-	var save = $('submit');
-	 save.addEventListener("click", storeData):
+	var save = $("submit");
+	save.addEventListener("click", storeData);
 
 });
