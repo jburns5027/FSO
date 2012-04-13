@@ -31,13 +31,17 @@ window.addEventListener("DOMContentLoaded" , function(){
    			}
    		}	
    	}	   		
-/*
+
 function getCheckBoxValue() {
-		if($("yes").checked){
-			yesValue =  $("yes").value;
-		}else{yesValue = "no"
+		var checkbox = document.forms[0].cbox;
+		
+		for(var i=0; i<checkbox.length; i++){
+		if (checkbox[i].checked){
+		 cboxValue.push(checkbox[i].value);
+		}
 		}
     }
+    
     
     function toggleControls(n){
     	switch(n){
@@ -59,33 +63,21 @@ function getCheckBoxValue() {
     	}
     
     }
-*/ 
+
    	  function  storeData(){
    		var id        		= Math.floor(Math.random()*100000000001);
    		// Gather all of our form field values and store in an object.
    		// Object properties contain array with the form label and input value.
    		getSelectedRadios();
-   		/*
+   		
    		getCheckBoxValue();
-   		*/
+   		
    		var item        				={};
-   			 item.headband			 	=["Headband", $("headband").value];
-   			 item.tanktop				=["Tank Top", $("tanktop").value];
-   			 item.tshirt				=["T-Shirt", $("tshirt").value];
-   			 item.compressiontop		=["Compression Top", $("compressiontop").value];
-   			 item.hoodie				=["Hoodie", $("hoodie").value];
-   			 item.compressionpants		=["Compression Pants", $("compressionpants").value];
-   			 item.dryfitshorts			=["Dry Fit Shorts", $("dryfitshorts").value];
-   			 item.compressionsocks		=["Compression Socks", $("compressionsock").value];
-   			 item.runningshoes			=["Running Shoes", $("runningshoes").value];
-   			 item.iphone				=["iPhone", $("iphone").value];
-   			 item.headphones			=["Head Phones", $("headphones").value];
-   			 item.heartratemonitor		=["Heartrate Monitor", $("heartratemonitor").value];
-   			 item.fitnessapp			=["Fitness App", $("fitnessapp").value];
-   			 item.waterbottle			=["Water Bottle", $("waterbottle").value];
-   			 item.group					=["Group", $("groups").value];
-   			 item.yesorno				=["Completed:", $("completed").value];
-   			 item.dcompeted				=["Date Completed", $("dcompleted").value];
+   			 item.apparel				=["Group",cboxValue];
+   			 item.group					=["Group",$("groups").value];
+   			 item.yesorno				=["Completed:", $("date-completed").value];
+   			 item.datecompleted			=["Date Completed", $("date-completed").value];
+   			 item.WoName				=["workoutname", $("WoName").value];
    			 // Save Data into local Storage: Use Stringify to convet our object to a string.
    		localStorage.setItem(id, JSON.stringify(item));
    		alert("Workout Saved!");
@@ -105,7 +97,7 @@ function getCheckBoxValue() {
    		for(var i=0, len=localStorage.length; i<len; i++){
    			var makeli = document.createElement('li');
    		makeList.appendChild(makeli);
-   		var key = localStorge.key(i);
+   		var key = localStorage.key(i);
    		var value = localStorage.getItem(key);
    		// Convert the string from local storage back to an object by using json.parse.
    		var obj = JSON.parse(value);
@@ -115,7 +107,7 @@ function getCheckBoxValue() {
    		var makeSubli = document.createElement('li');
    		makeSubList.appendChild(makeSubli);
    		var optSubText = obj[n][0]+" "+obj[n][1];
-   		makeSubli.innerHTML = optSubList;
+   		makeSubli.innerHTML = optSubText;
    		}
    	}
 }
@@ -132,13 +124,14 @@ function getCheckBoxValue() {
    	 // Variable defaults
    	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"],
    	 	yesornoValue;
-   	makeWorkOuts();  
+   	makeWorkOuts(); 
+   	var cboxValue = [];
    
    // set links, and click events
 	var displayLink =  $('displayLink');
 	displayLink.addEventListener("click", getData);
 	var clearLink = $('clear');
-	clearLink.addEventListener("clear", clearLocal);
+	clearLink.addEventListener("click", clearLocal);
 	var save = $("submit");
 	save.addEventListener("click", storeData);
 
