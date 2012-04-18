@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise Log</title>
+    <meta charset="UTF-0" />
+<meta keywords"exercise, log" />
+<meta discription"Ecercise Log"/>
+<meta name="robots" content="index, fallow" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<meta name="handheldfriendly" content="true" />
+<meta name="Mobileoptimized" content="320" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+	<body>
+	<header><h1>Add a Workout.</h1></header>
+	<form action="#" method="post">
+	<fieldset>
+		<legend>Pre-Workout Checklist:</legend>
+	<ul>
+		<li>Apparel:
+		<ul>
+			<li>Upper Body:
+				<li><input type="checkbox" value="headband" id="headband" /><label for="headband">Headband</label></li>
+				<li><input type="checkbox" value="Tank Top" id="tanktop" /><label for="tanktop">Tank Top</label></li>
+				<li><input type="checkbox" value="T-Shirt" id="tshirt" /><label for="tshirt">T-Shirt</label></li>
+				<li><input type="checkbox" value="Compression Top" id="compressiontop" /><label for="Compressiontop">Compression Top</label></li>
+				<li><input type="checkbox" value="Hoodie" id="hoodie" /><label for="hoodie">Hoodie</label></li>
+			<li>Lower Body:	
+				<li><input type="checkbox" value="Compression Pants" id="compressionpants" /><label for="compressionpants">Compression Pants</label></li>
+				<li><input type="checkbox" value="dryfitshorts" id="dryfitshorts" /><label for="dryfitshorts">Dry Fit Shorts</label></li>
+				<li><input type="checkbox" value="Compression Socks" id="compressionsocks" /><label for="compressionsocks">Compression Socks</label></li>
+				<li><input type="checkbox" value="Running Shoes" id="runningshoes" /><label for="runningshoes">Running Shoes/label></li>
+			<li>Accesories:
+				<li><input type="checkbox" value="iphone" id="iPhone" /><label for="iPhone">iPhone</label></li>
+				<li><input type="checkbox" value="Headphones" id="headphones" /><label for="headphones">Headphones</label></li>
+				<li><input type="checkbox" value="Fitness app" id="fitnessapp" /><label for="fitnessapp">Fitness app</label></li>
+				<li><input type="checkbox" value="Heartrate Monitor" id="heartratemonitor" /><label for="heartratemonitor">Heartrate Monitor</label></li>
+				<li><input type="checkbox" value="Water Bottle" id="waterbottle" /><label for="waterbottle">Water Bottle</label></li>
+			</ul>		
+	</fieldset>
+	<form action="#" method="post">
+	<fieldset>
+		<legend>Workout</legend>
+		<ul>
+		<li id="select"><label for="workOutGroups">Type of Workout</label><br /></li>
+		<select id="Workout">
+		<option value="Cardio">Cardio</option>
+		<option value="Weight">Weight</option>
+		<option value="Core">Core</option>
+	</select>
+		<li><label for "WoName">Workout:</label><input type="text" id="WoName" /></li>	
+		<li >Did you complete the workout?:
+	<ul>
+		<li><input type="radio" checked value="Yes" id="Yes" name="yesorno" / ><label for="Yes">Yes</label></li>
+		<li><input type="radio"  value="No" id="No" name="yesorno" / ><label for="No">No</label></li>
+	</ul>	
+		<li><label for="Date-Completed">Date Completed:</label><input type="date" id="Date-Completed" date="date"></li>
+		<label for="timeOday">Time of day workout was completed:</label>
+			<select id="Time of day workout was completed:">
+				<option value="Morning">Morning</option>
+				<option value="Afternoon">Afternoon</option>
+				<option value="Evening">Evening</option>
+			</select>
+	</ul>
+	<ul>
+		<li>Intensity(0 = Sluggish/ 100 = Over Done):
+			<input id="slider1" type="range" min="100" max="100" step="5" />
+	</ul>
+	</fieldset>
+	</form>
+<nav>
+	 <input type="submit" value="Log Workout!" />
+	 <a href="#" id="displayLink">Display Data,  </a>
+	 <a href="#" id="clear">Clear Stored Data</a>
+	 </nav>
+<footer>
+	</footer>
+	<script src="main.js" type="text/javascript" ></script>
+	</body>
+</html>
