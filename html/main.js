@@ -147,7 +147,7 @@ function getCheckBoxValue() {
 		deleteLink.href ="#";
 		deleteLink.key = key;
 		var deleteText = "Delete Workout.";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 	    linksLi.appendChild(deleteLink); 
 	} 
@@ -188,6 +188,16 @@ function getCheckBoxValue() {
 	editSubmit.key = this.key;
 	
  }
+    function deleteItem(){
+    var ask = confirm("Are your sure you want to delete this workout?");
+    if(ask){
+    	localStorage.removeItem(this.key);
+    	alert("Workout was deleted");
+    	window.location.reload();
+    	}else{
+    		alert("Workout was not deleted");
+    }
+    }
 	
 	function clearLocal(){
 		if(localStorage.length ===0){
@@ -222,7 +232,7 @@ function getCheckBoxValue() {
 		}
 		// If there were any errors, display them on the sceen.
 		if(messageAry.length >= 1){
-			for(var i=0, j=messageAry.length; i < j; i++);
+			for(var i=0, j=messageAry.length; i < j; i++){
 			var txt = document.CreatElement('li');
 			txt.innerHTML = messageAry[i];
 			errMsg.appendChild(txt); 
