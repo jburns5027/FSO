@@ -77,13 +77,10 @@ function getCheckBoxValue() {
    	    
    	    	id = key;
    	    }
-
-   		// Gather all of our form field values and store in an object.
+        // Gather all of our form field values and store in an object.
    		// Object properties contain array with the form label and input value.
    		getSelectedRadios();
-   		
-   		getCheckBoxValue();
-   		
+   	    getCheckBoxValue();
    		var item        				={};
    			 item.apparel				=["Group",cboxValue];
    			 item.group					=["Group",$("groups").value];
@@ -225,7 +222,7 @@ function getCheckBoxValue() {
 		// Get error messages
 		var messageAry = [];
 		// Group Validation
-		if(getWoName.value === ""){
+		if(getWoName.value == ""){
 		var WoNameError = "Please name your Workout.";
 		getWoName.style.border = "1px solid red";
 		messageAry.push(WoNameError);
@@ -233,7 +230,7 @@ function getCheckBoxValue() {
 		// If there were any errors, display them on the sceen.
 		if(messageAry.length >= 1){
 			for(var i=0, j=messageAry.length; i < j; i++){
-			var txt = document.CreatElement('li');
+			var txt = document.createElement('li');
 			txt.innerHTML = messageAry[i];
 			errMsg.appendChild(txt); 
 		}
@@ -251,7 +248,7 @@ function getCheckBoxValue() {
    	 	yesornoValue;
    	makeWorkOuts(); 
    	var cboxValue = [];
-   	errMSG = $('errors')
+   	errMsg = $("errors")
    
    // set links, and click events
 	var displayLink =  $('displayLink');
