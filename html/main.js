@@ -1,4 +1,5 @@
 // JavaScript Document
+// Activity 3
 // Wait until the DOM is Ready.
 window.addEventListener("DOMContentLoaded" , function(){
 	  // getElementById function:
@@ -64,8 +65,19 @@ function getCheckBoxValue() {
     
     }
 
-   	  function  storeData(){
-   		var id        		= Math.floor(Math.random()*100000000001);
+   	  function  storeData(key){
+   	  // if there is no key, this means this is a brand new item, and we need new key
+   	  
+   	    if(!key){
+   	       		var id        		= Math.floor(Math.random()*100000000001);
+   	    }else{
+   	    // otherwise set excisting key to save over data.
+   	    // the key is the same thats been passed along from edit submit eveent handler.
+   	    // to validate function, and then passed here into store data function.
+   	    
+   	    	id = key;
+   	    }
+
    		// Gather all of our form field values and store in an object.
    		// Object properties contain array with the form label and input value.
    		getSelectedRadios();
@@ -91,6 +103,7 @@ function getCheckBoxValue() {
    		var makeDiv = document.createElement('div');
    		makeDiv.setAttribute("id", 'items');
    		var makeList = document.createElement('ul');
+   		var linksLi = document.createElement('ul');
    		makeDiv.appendChild(makeList);
    		document.body.appendChild(makeDiv);
    		$('items').style.display = "block";
@@ -108,9 +121,74 @@ function getCheckBoxValue() {
    		makeSubList.appendChild(makeSubli);
    		var optSubText = obj[n][0]+" "+obj[n][1];
    		makeSubli.innerHTML = optSubText;
+   		makeSubList.appendChild(linksLi);
    		}
+   		makeItemLinks(localStorage.key(i), linksLi);   // Create edit and delete buttons.
    	}
 }
+	// Make Item Links Function.
+	// Create the edit and delete links for each stored item when displayed.
+	function makeItemLinks(key, linksLi){
+	//add edit single item link.
+		var editLink = document.createElement('a');
+	    editLink.href = "#";
+		editLink.key = key;
+		var editText = "Edit Workout";
+		editLink.addEventListener("click", editItem);
+		editLink.innerHTML = editText;
+		linksLi.appendChild(editLink);
+		
+		// add line break
+		var breakTag = document.createElement('br');
+		linksLi.appendChild(breakTag);
+		
+		// Add a delete single item link.
+		var deleteLink = document.createElement('a');
+		deleteLink.href ="#";
+		deleteLink.key = key;
+		var deleteText = "Delete Workout.";
+		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.innerHTML = deleteText;
+	    linksLi.appendChild(deleteLink); 
+	} 
+	
+	function editItem(){
+	// Grab the data from our item from local storage.
+	var value = localStorage.getItem(this.key);
+	var item = JSON.parse(value);
+	// Show the form.
+	toggleControls("off");
+	
+	// populate form fields with the current local storage values.
+	$('groups').value = item.group[1];
+	$('apparel').value = item.apparel[1];
+	$('yesorno').value = item.yesorno[1];
+	$('WoName').value = item.WoName[1];
+	var radios = documents.forms[0].yesorno;
+	for(var i=0; i<radios.length; i++){
+	   if(radios[i].value == "Yes" && item.yesorno[1] == "Yes" ){
+	   	  radios[i].setAttribute("checked", "checked");
+	   	  } else if(radios[i].value == "No" && item.yesorno[1] == "No"){
+	   			radios[i].setAttribute("checked", "checked");
+	   }
+	   
+	   if (item.yesorno[1] == "Yes"){
+	   $('yesorno').setAttribute("checked", "checked");
+	   }
+	 } 
+	//$('iq').value = obj.iq[1];
+	// Remove the initial listener from the input  'save contact' button.
+	save.removeEventListener("click", storeData);
+	// Change Submit Button value to say edit button.
+	$('submit').value = "Edit Workout";
+	var editSubmit = $('submit');
+	// Save the key value est  in this function as property of the editSubmit even
+	// so we can use that value when we save the data we editied. 
+	editSubmit.addEventListener("click", validate);
+	editSubmit.key = this.key;
+	
+ }
+	
 	function clearLocal(){
 		if(localStorage.length ===0){
 			alert("There is no Data to Clear.");
@@ -121,18 +199,56 @@ function getCheckBoxValue() {
 			return false;
 		}
 	}
-   	 // Variable defaults
+	
+	function validate(e){
+		// Difine the element we want to check
+		//var getGroup =   $('groups');
+		//var getApparel = $('apparel');
+		//var getYesorno = $('yesorno');
+		//var getDateCompleted = $('datecompleted');
+		var getWoName = $('WoName');
+		
+		// Reset the error messages.
+		errMsg.innerHTML; 
+		getWoName.style.border = "1px solid black";
+		
+		// Get error messages
+		var messageAry = [];
+		// Group Validation
+		if(getWoName.value === ""){
+		var WoNameError = "Please name your Workout.";
+		getWoName.style.border = "1px solid red";
+		messageAry.push(WoNameError);
+		}
+		// If there were any errors, display them on the sceen.
+		if(messageAry.length >= 1){
+			for(var i=0, j=messageAry.length; i < j; i++);
+			var txt = document.CreatElement('li');
+			txt.innerHTML = messageAry[i];
+			errMsg.appendChild(txt); 
+		}
+		 e.preventDefault();
+		 return false; 
+		 }else{
+		 	// If all is ok, save our data. Send the key value witch came from edit data function
+		 	// remember this key value, it was passed through the edit even listner as a property
+		      storeData(this.key);
+		 }
+		
+	}
+   	 // Variable defaults 
    	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"],
    	 	yesornoValue;
    	makeWorkOuts(); 
    	var cboxValue = [];
+   	errMSG = $('errors')
    
    // set links, and click events
 	var displayLink =  $('displayLink');
 	displayLink.addEventListener("click", getData);
 	var clearLink = $('clear');
 	clearLink.addEventListener("click", clearLocal);
-	var save = $("submit");
-	save.addEventListener("click", storeData);
+	var save = $('submit');
+	save.addEventListener("click", validate);
 
 });
