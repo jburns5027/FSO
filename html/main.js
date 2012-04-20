@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded" , function(){
    var theElement = document.getElementById(x);
    return theElement;
    }
-   
    // Create Select Field Element and populate with options.
    function makeWorkOuts(){
    		var formTag = document.getElementsByTagName("form"),     // formTag is array of all of the form tags. 
@@ -32,7 +31,6 @@ window.addEventListener("DOMContentLoaded" , function(){
    			}
    		}	
    	}	   		
-
 function getCheckBoxValue() {
 		var checkbox = document.forms[0].cbox;
 		
@@ -42,8 +40,6 @@ function getCheckBoxValue() {
 		}
 		}
     }
-    
-    
     function toggleControls(n){
     	switch(n){
     		case "on":
@@ -62,10 +58,8 @@ function getCheckBoxValue() {
     	   default:
     	   return false;
     	}
-    
     }
-
-   	  function  storeData(key){
+	function  storeData(key){
    	  // if there is no key, this means this is a brand new item, and we need new key
    	  
    	    if(!key){
@@ -148,7 +142,6 @@ function getCheckBoxValue() {
 		deleteLink.innerHTML = deleteText;
 	    linksLi.appendChild(deleteLink); 
 	} 
-	
 	function editItem(){
 	// Grab the data from our item from local storage.
 	var value = localStorage.getItem(this.key);
@@ -195,7 +188,6 @@ function getCheckBoxValue() {
     		alert("Workout was not deleted");
     }
     }
-	
 	function clearLocal(){
 		if(localStorage.length ===0){
 			alert("There is no Data to Clear.");
@@ -206,7 +198,6 @@ function getCheckBoxValue() {
 			return false;
 		}
 	}
-	
 	function validate(e){
 		// Difine the element we want to check
 		//var getGroup =   $('groups');
@@ -222,7 +213,7 @@ function getCheckBoxValue() {
 		// Get error messages
 		var messageAry = [];
 		// Group Validation
-		if(getWoName.value == ""){
+		if(getWoName.value === ""){
 		var WoNameError = "Please name your Workout.";
 		getWoName.style.border = "1px solid red";
 		messageAry.push(WoNameError);
@@ -232,7 +223,7 @@ function getCheckBoxValue() {
 			for(var i=0, j=messageAry.length; i < j; i++){
 			var txt = document.createElement('li');
 			txt.innerHTML = messageAry[i];
-			errMsg.appendChild(txt); 
+				errMsg.appendChild(txt); 
 		}
 		 e.preventDefault();
 		 return false; 
@@ -241,14 +232,13 @@ function getCheckBoxValue() {
 		 	// remember this key value, it was passed through the edit even listner as a property
 		      storeData(this.key);
 		 }
-		
-	}
+		}
    	 // Variable defaults 
    	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"],
    	 	yesornoValue;
    	makeWorkOuts(); 
    	var cboxValue = [];
-   	errMsg = $("errors")
+   	errMsg = $('errors');
    
    // set links, and click events
 	var displayLink =  $('displayLink');
