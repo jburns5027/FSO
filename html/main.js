@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded" , function(){
    var theElement = document.getElementById(x);
    return theElement;
    }
-   // Create Select Field Element and populate with options.
+    // Create Select Field Element and populate with options.
    function makeWorkOuts(){
    		var formTag = document.getElementsByTagName("form"),     // formTag is array of all of the form tags. 
    			selectLi = $('select'),
@@ -88,7 +88,8 @@ function getCheckBoxValue() {
    function getData(){
    		toggleControls("on");
    		if(localStorage.length ===0){
-   		alert("There is no data in local storage.");
+   			alert("There is no data in local storage, so defalult data was added.");
+   			autoFillData();
    		}
    		// Write data from local storage to browser.
    		var makeDiv = document.createElement('div');
@@ -99,24 +100,37 @@ function getCheckBoxValue() {
    		document.body.appendChild(makeDiv);
    		$('items').style.display = "block";
    		for(var i=0, len=localStorage.length; i<len; i++){
-   			var makeli = document.createElement('li');
-   		makeList.appendChild(makeli);
-   		var key = localStorage.key(i);
-   		var value = localStorage.getItem(key);
-   		// Convert the string from local storage back to an object by using json.parse.
-   		var obj = JSON.parse(value);
-   		var makeSubList = document.createElement('ul');
-   		makeli.appendChild(makeSubList);
-   		for(var n in obj){
-   		var makeSubli = document.createElement('li');
-   		makeSubList.appendChild(makeSubli);
-   		var optSubText = obj[n][0]+" "+obj[n][1];
-   		makeSubli.innerHTML = optSubText;
-   		makeSubList.appendChild(linksLi);
-   		}
-   		makeItemLinks(localStorage.key(i), linksLi);   // Create edit and delete buttons.
-   	}
+				var makeli = document.createElement('li');
+			makeList.appendChild(makeli);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			// Convert the string from local storage back to an object by using json.parse.
+			var obj = JSON.parse(value);
+			var makeSubList = document.createElement('ul');
+			makeli.appendChild(makeSubList);
+			for(var n in obj){
+				var makeSubli = document.createElement('li');
+				  makeSubList.appendChild(makeSubli);
+				var optSubText = obj[n][0]+" "+obj[n][1];
+				makeSubli.innerHTML = optSubText;
+				makeSubList.appendChild(linksLi);
+				}
+				makeItemLinks(localStorage.key(i), linksLi);   // Create edit and delete buttons.
+		}
 }
+	// Auto Populate Local Storage
+	function  autoFillData(){
+			// The acual JSON object data required for this to work is comming from our json.js file.
+			// Store the JSON object in local storage.
+			for(var n in json ){
+				var id = Math.floor(Math.random()*100000000001);
+				localStorage.setItem(id, JSON.stringify(json[n]));
+			}
+	}
+
+
+
+
 	// Make Item Links Function.
 	// Create the edit and delete links for each stored item when displayed.
 	function makeItemLinks(key, linksLi){
@@ -247,5 +261,4 @@ function getCheckBoxValue() {
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
 	save.addEventListener("click", validate);
-
 });
