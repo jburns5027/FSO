@@ -108,6 +108,7 @@ function getCheckBoxValue() {
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeli.appendChild(makeSubList);
+			getImage(obj.group[1],makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement('li');
 				  makeSubList.appendChild(makeSubli);
@@ -118,6 +119,14 @@ function getCheckBoxValue() {
 				makeItemLinks(localStorage.key(i), linksLi);   // Create edit and delete buttons.
 		}
 }
+// Get the image for the right category thats being displayed
+function getImage(catName, makeSubList){
+	var imageLi = document.createElement('li');
+	makeSubList.appendChild(imageLi);
+	var newImg = document.createElement('img');
+	var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+	imageLi.appendChild(newImg); 
+}
 	// Auto Populate Local Storage
 	function  autoFillData(){
 			// The acual JSON object data required for this to work is comming from our json.js file.
@@ -127,9 +136,7 @@ function getCheckBoxValue() {
 				localStorage.setItem(id, JSON.stringify(json[n]));
 			}
 	}
-
-
-
+	
 
 	// Make Item Links Function.
 	// Create the edit and delete links for each stored item when displayed.
@@ -247,6 +254,25 @@ function getCheckBoxValue() {
 		      storeData(this.key);
 		 }
 		}
+		/*
+		function getSearch(e) {
+			var category = $('groups').value;
+			var term = $('search').value;
+			if(category !+ "--Choose a Group--" && term ===""){
+				for()
+
+
+			}
+
+
+		}
+		// Search
+	var search = $('searchBtn');
+	search.addEventListner("click", getSearch);
+	*/
+
+
+
    	 // Variable defaults 
    	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"],
    	 	yesornoValue;
