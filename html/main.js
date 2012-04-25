@@ -108,7 +108,7 @@ function getCheckBoxValue() {
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeli.appendChild(makeSubList);
-			getImage(obj.group[1],makeSubList);
+			getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement('li');
 				  makeSubList.appendChild(makeSubli);
@@ -124,7 +124,7 @@ function getImage(catName, makeSubList){
 	var imageLi = document.createElement('li');
 	makeSubList.appendChild(imageLi);
 	var newImg = document.createElement('img');
-	var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+	var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
 	imageLi.appendChild(newImg); 
 }
 	// Auto Populate Local Storage
@@ -254,12 +254,20 @@ function getImage(catName, makeSubList){
 		      storeData(this.key);
 		 }
 		}
-		/*
+		///*
 		function getSearch(e) {
 			var category = $('groups').value;
 			var term = $('search').value;
 			if(category !+ "--Choose a Group--" && term ===""){
-				for()
+				for(i=0, j=localStorage.length; i<j; i++){
+					var key = localStorage.getItem(key);
+					var obj = JSON.parse(value);
+					if(category === obj.group[1]){
+						for(n in obj){
+							console.log(obj[n][1]);
+						}
+					}
+				}
 
 
 			}
