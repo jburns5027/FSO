@@ -5,12 +5,43 @@ background:#82CAFA;
 
 h1 {
 text-align: center;
-margin: 20px;
-border: 30px #FFFC17;
+padding:10px;
+margin:10px 50px 10px 50px;
+border:5px  solid #7FFF00;
 font-style: italic;
 background: #306EFF;
 }
- footer {
- font-style: bold;
- }
+body
+{
+background-image:url('images/gradient.jpg');
+}
+
+p{
+	background:#7FFF00 ;
+	text-align: center;
+	margin:15px 150px 15px 150px;
+	
+}
+h2{
+	background:#7FFF00;
+	text-align: center;
+	margin:10px 200px 10px 200px;
+}
+footer{
+	text-align:center;
+}
+ 
+a{
+	background:#7FFF00;
+	text-align:center;
+
+}
+b{
+	background:#7FFF00;
+	text-align:center;
+}
+a:hover{color: #7FFF00;}
+
+b:hover{color: #ADFF2F;}
+
 
