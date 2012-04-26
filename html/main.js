@@ -76,7 +76,7 @@ function getCheckBoxValue() {
    		getSelectedRadios();
    	    getCheckBoxValue();
    		var item        				={};
-   			 item.apparel				=["Group",cboxValue];
+   			 //item.apparel				=["Group",cboxValue];
    			 item.group					=["Group",$("groups").value];
    			 item.yesorno				=["Completed:", $("date-completed").value];
    			 item.datecompleted			=["Date Completed", $("date-completed").value];
@@ -124,7 +124,7 @@ function getImage(catName, makeSubList){
 	var imageLi = document.createElement('li');
 	makeSubList.appendChild(imageLi);
 	var newImg = document.createElement('img');
-	var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+	var setSrc = newImg.setAttribute("src", "images/"+ catName + ".jpg");
 	imageLi.appendChild(newImg); 
 }
 	// Auto Populate Local Storage
@@ -172,7 +172,7 @@ function getImage(catName, makeSubList){
 	
 	// populate form fields with the current local storage values.
 	$('groups').value = item.group[1];
-	$('apparel').value = item.apparel[1];
+	
 	$('yesorno').value = item.yesorno[1];
 	$('WoName').value = item.WoName[1];
 	var radios = documents.forms[0].yesorno;
