@@ -124,7 +124,7 @@ function getImage(catName, makeSubList){
 	var imageLi = document.createElement('li');
 	makeSubList.appendChild(imageLi);
 	var newImg = document.createElement('img');
-	var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
+	var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
 	imageLi.appendChild(newImg); 
 }
 	// Auto Populate Local Storage
@@ -254,17 +254,18 @@ function getImage(catName, makeSubList){
 		      storeData(this.key);
 		 }
 		}
-		///*
+		/*
+
 		function getSearch(e) {
 			var category = $('groups').value;
 			var term = $('search').value;
-			if(category !+ "--Choose a Group--" && term ===""){
+			if(term != "" && category ==="--Chose a Workout--"){
 				for(i=0, j=localStorage.length; i<j; i++){
 					var key = localStorage.getItem(key);
 					var obj = JSON.parse(value);
-					if(category === obj.group[1]){
+					if(term === obj.[n][1]){
 						for(n in obj){
-							console.log(obj[n][1]);
+							console.log(obj[q][1]);
 						}
 					}
 				}
@@ -274,14 +275,12 @@ function getImage(catName, makeSubList){
 
 
 		}
+
 		// Search
 	var search = $('searchBtn');
 	search.addEventListner("click", getSearch);
 	*/
-
-
-
-   	 // Variable defaults 
+// Variable defaults 
    	 var workOutGroups = ["--Choose a Workout--", "Cardio", "Weight", "Core"],
    	 	yesornoValue;
    	makeWorkOuts(); 
