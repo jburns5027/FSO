@@ -3,14 +3,14 @@
 // Wait until the DOM is Ready.
 window.addEventListener("DOMContentLoaded" , function(){
 	  // getElementById function:
-   function $(x){
+   function ge(x){
    var theElement = document.getElementById(x);
    return theElement;
    }
     // Create Select Field Element and populate with options.
    function makeWorkOuts(){
    		var formTag = document.getElementsByTagName("form"),     // formTag is array of all of the form tags. 
-   			selectLi = $('select'),
+   			selectLi = ge('select'),
    			makeSelect = document.createElement('select');
    			makeSelect.setAttribute("id", "groups");
    		for (var i=0, j=workOutGroups.length; i<j; i++) {
@@ -43,17 +43,17 @@ function getCheckBoxValue() {
     function toggleControls(n){
     	switch(n){
     		case "on":
-    		    $('contactForm').style.display ="none";
-    		    $('clear').style.display = "inline";
-    		    $('displayLink').style.display = "none";
-    		    $('addNew').style.display = "inline";
+    		    ge('contactForm').style.display ="none";
+    		    ge('clear').style.display = "inline";
+    		    ge('displayLink').style.display = "none";
+    		    ge('addNew').style.display = "inline";
     			break;
     	   case "off":
-    	   		$('contactForm').style.display ="block";
-    		    $('clear').style.display = "inline";
-    		    $('displayLink').style.display = "inline";
-    		    $('addNew').style.display = "none";
-    		    $('items').style.display = "none"; 
+    	   		ge('contactForm').style.display ="block";
+    		    ge('clear').style.display = "inline";
+    		    ge('displayLink').style.display = "inline";
+    		    ge('addNew').style.display = "none";
+    		    ge('items').style.display = "none"; 
     	   		break;
     	   default:
     	   return false;
@@ -76,11 +76,11 @@ function getCheckBoxValue() {
    		getSelectedRadios();
    	    getCheckBoxValue();
    		var item        				={};
-   			 //item.apparel				=["Group",cboxValue];
-   			 item.group					=["Group",$("groups").value];
-   			 item.yesorno				=["Completed:", $("date-completed").value];
-   			 item.datecompleted			=["Date Completed", $("date-completed").value];
-   			 item.WoName				=["workoutname", $("WoName").value];
+   			 item.apparel				=["Group",cboxValue];
+   			 item.group					=["Group",ge("groups").value];
+   			 item.yesorno				=["Completed:", ge("date-completed").value];
+   			 item.datecompleted			=["Date Completed", ge("date-completed").value];
+   			 item.WoName				=["workoutname", ge("WoName").value];
    			 // Save Data into local Storage: Use Stringify to convet our object to a string.
    		localStorage.setItem(id, JSON.stringify(item));
    		alert("Workout Saved!");
@@ -98,7 +98,7 @@ function getCheckBoxValue() {
    		var linksLi = document.createElement('ul');
    		makeDiv.appendChild(makeList);
    		document.body.appendChild(makeDiv);
-   		$('items').style.display = "block";
+   		ge('items').style.display = "block";
    		for(var i=0, len=localStorage.length; i<len; i++){
 				var makeli = document.createElement('li');
 			makeList.appendChild(makeli);
@@ -171,10 +171,10 @@ function getImage(catName, makeSubList){
 	toggleControls("off");
 	
 	// populate form fields with the current local storage values.
-	$('groups').value = item.group[1];
-	
-	$('yesorno').value = item.yesorno[1];
-	$('WoName').value = item.WoName[1];
+	ge('groups').value = item.group[1];
+	//ge('apparel').value = item.apparel[1];
+	//ge('yesorno').value = item.yesorno[1];
+	ge('WoName').value = item.WoName[1];
 	var radios = documents.forms[0].yesorno;
 	for(var i=0; i<radios.length; i++){
 	   if(radios[i].value == "Yes" && item.yesorno[1] == "Yes" ){
@@ -184,15 +184,15 @@ function getImage(catName, makeSubList){
 	   }
 	   
 	   if (item.yesorno[1] == "Yes"){
-	   $('yesorno').setAttribute("checked", "checked");
+	   ge('yesorno').setAttribute("checked", "checked");
 	   }
 	 } 
-	//$('iq').value = obj.iq[1];
+	//ge('iq').value = obj.iq[1];
 	// Remove the initial listener from the input  'save contact' button.
 	save.removeEventListener("click", storeData);
 	// Change Submit Button value to say edit button.
-	$('submit').value = "Edit Workout";
-	var editSubmit = $('submit');
+	ge('submit').value = "Edit Workout";
+	var editSubmit = ge('submit');
 	// Save the key value est  in this function as property of the editSubmit even
 	// so we can use that value when we save the data we editied. 
 	editSubmit.addEventListener("click", validate);
@@ -221,11 +221,11 @@ function getImage(catName, makeSubList){
 	}
 	function validate(e){
 		// Difine the element we want to check
-		//var getGroup =   $('groups');
-		//var getApparel = $('apparel');
-		//var getYesorno = $('yesorno');
-		//var getDateCompleted = $('datecompleted');
-		var getWoName = $('WoName');
+		//var getGroup =   ge('groups');
+		//var getApparel = ge('apparel');
+		//var getYesorno = ge('yesorno');
+		//var getDateCompleted = ge('datecompleted');
+		var getWoName = ge('WoName');
 		
 		// Reset the error messages.
 		errMsg.innerHTML; 
@@ -257,8 +257,8 @@ function getImage(catName, makeSubList){
 		/*
 
 		function getSearch(e) {
-			var category = $('groups').value;
-			var term = $('search').value;
+			var category = ge('groups').value;
+			var term = ge('search').value;
 			if(term != "" && category ==="--Chose a Workout--"){
 				for(i=0, j=localStorage.length; i<j; i++){
 					var key = localStorage.getItem(key);
@@ -277,7 +277,7 @@ function getImage(catName, makeSubList){
 		}
 
 		// Search
-	var search = $('searchBtn');
+	var search = ge('searchBtn');
 	search.addEventListner("click", getSearch);
 	*/
 // Variable defaults 
@@ -285,13 +285,13 @@ function getImage(catName, makeSubList){
    	 	yesornoValue;
    	makeWorkOuts(); 
    	var cboxValue = [];
-   	errMsg = $('errors');
+   	errMsg = ge('errors');
    
    // set links, and click events
-	var displayLink =  $('displayLink');
+	var displayLink =  ge('displayLink');
 	displayLink.addEventListener("click", getData);
-	var clearLink = $('clear');
+	var clearLink = ge('clear');
 	clearLink.addEventListener("click", clearLocal);
-	var save = $('submit');
+	var save = ge('submit');
 	save.addEventListener("click", validate);
 });
